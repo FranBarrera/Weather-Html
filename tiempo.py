@@ -6,21 +6,21 @@ from jinja2 import Template
 html = open('index.html','w')
 
 def direccion(orientacion):
-#	if orientacion > 342,5 < 22,5:
-#		return 'N'
-#	if orientacion > 22,5 and orientacion < 90:
-#		return 'NE'
-	if orientacion == 90:
+	if (orientacion > 337,5 and orientacion < 360) or (orientacion  > 0 and orientacion < 22.5):
+		return 'N'
+	if orientacion > 22,5 and orientacion < 67,5:
+		return 'NE'
+	if orientacion > 67,5 and orientacion < 112,5:
 		return 'E'
-	if orientacion > 90 and orientacion < 180:
+	if orientacion > 112,5 and orientacion < 157,5:
 		return 'SE'
-	if orientacion == 180:
+	if orientacion > 157,5 and orientacion < 202,5:
 		return 'S'
-	if orientacion > 180 and orientacion < 270:
+	if orientacion > 202,5 and orientacion < 245,5:
 		return 'SO'
-	if orientacion == 270:
+	if orientacion > 245,5 and orientacion < 292,5:
 		return 'O'
-	if orientacion > 270:
+	if orientacion > 292,5 and orientacion < 337,5:
 		return 'NO'
 
 print ''
