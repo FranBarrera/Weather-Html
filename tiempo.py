@@ -3,7 +3,8 @@ import json
 import os
 import requests
 from jinja2 import Template
-html = open('template.html','r')
+import webbrowser
+f = open('template.html','r')
 
 def direccion(orientacion):
 	if (orientacion > 337.5 and orientacion < 360) or (orientacion  > 0 and orientacion < 22.5):
@@ -29,39 +30,34 @@ provincias = {'1':'Almeria','2':'Cadiz','3':'Cordoba','4':'Granada','5':'Huelva'
 
 
 
-for numero in provincias:
-	print provincias[numero]
+#for numero in provincias:
+#	print provincias[numero]
 
-print ''
+#print ''
 
-respuesta = raw_input('Elige una Provincia para ver el tiempo: ')
 
 #os.system('clear')
 
-print 'El tiempo para la Provincia de:',provincias[respuesta]
+#print 'El tiempo para la Provincia de:',provincias[respuesta]
 
-print''
+#print''
 
-tiempo = requests.get('http://api.openweathermap.org/data/2.5/weather', params={'q':'%s,spain' % provincias[respuesta]})
-jtemp = json.loads(tiempo.text)
-temp = jtemp['main']['temp']
-grados = round(temp - 273,2)
-speed = round(jtemp['wind']['speed']*1.609,1)
-orientacion = jtemp['wind']['deg']
-orientacion = direccion(orientacion)
+#tiempo = requests.get('http://api.openweathermap.org/data/2.5/weather', params={'q':'%s,spain' % provincias['1']})
+#jtemp = json.loads(tiempo.text)
+#temp = jtemp['main']['temp']
+#grados = round(temp - 273,2)
+#speed = round(jtemp['wind']['speed']*1.609,1)
+#orientacion = jtemp['wind']['deg']
+#orientacion = direccion(orientacion)
 
-print 'La temperatura actual de %s es de %s grados centígrados' % (provincias[respuesta],grados)
-
-print speed
-print orientacion
-
-
-f = open ('ejempl1.html','r')
 html =''
 
 for linea in f:
 	html += linea
-template.render(name=html)
+mitemplate = Template("html")
+mitemplate.render(provincia="juanito")
 
-mitemplate = Template(' {{ provincia }}!')
-print mitemplate.render(name=provincias[respuesta])
+print html
+#webbrowser.open("html")
+
+#mitemplate.render(name=html)
