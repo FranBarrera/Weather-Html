@@ -54,10 +54,10 @@ html =''
 
 for linea in f:
 	html += linea
-mitemplate = Template("html")
-mitemplate.render(provincia="juanito")
+mitemplate = Template(html)
+mitemplate = mitemplate.render(provincia='juanito')
 
-print html
-#webbrowser.open("html")
+print mitemplate
+#webbrowser.open(html)
 
 #mitemplate.render(name=html)
