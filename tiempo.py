@@ -50,11 +50,12 @@ for provincia in provincias:
 	listtemp_min.append(temp_min)
 	temp_max = int(jtemp['main']['temp_max']-273)
 	listtemp_max.append(temp_max)
+	
 
 
 mitemplate = Template(html)
 mitemplate = mitemplate.render(provincia=provincias,temp_min=listtemp_min,temp_max=listtemp_max,viento=listviento,direccion=listorientacion)
 web.write(mitemplate)
 
-print mitemplate
-#webbrowser.open('web.html')
+
+webbrowser.open('web.html')
