@@ -45,15 +45,16 @@ for provincia in provincias:
 	listviento.append(speed)
 	orienta = jtemp['wind']['deg']
 	orientacion = direccion(orienta)
-	listorientacion.appendo(orientacion)
+	listorientacion.append(orientacion)
 	temp_min = int(jtemp['main']['temp_min']-273)
-	listtemp_min.appendo(temp_min)
+	listtemp_min.append(temp_min)
 	temp_max = int(jtemp['main']['temp_max']-273)
 	listtemp_max.append(temp_max)
 
 
 mitemplate = Template(html)
-mitemplate = mitemplate.render(provincia=provincia,temp_min=listtemp_min,temp_max=listtemp_max,viento=listviento,direccion=listorientacion)
+mitemplate = mitemplate.render(provincia=provincias,temp_min=listtemp_min,temp_max=listtemp_max,viento=listviento,direccion=listorientacion)
 web.write(mitemplate)
 
-webbrowser.open('web.html')
+print mitemplate
+#webbrowser.open('web.html')
