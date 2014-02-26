@@ -32,7 +32,7 @@ listviento = []
 listorientacion = []
 listtemp_min = []
 listtemp_max = []
-provincias = ['Almeria','Cadiz','Cordoba','Huelva','Jaen','Malaga','Sevilla']
+provincias = ['Almeria','Cadiz','Cordoba','Granada','Huelva','Jaen','Malaga','Sevilla']
 
 for linea in f:
 	html += linea
