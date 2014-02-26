@@ -6,15 +6,15 @@
 	</head>
 	<body>
 		<h1> El tiempo en Andalucia </h1>
-		{% set cont = 0 %}
+		{% set count = 0 %}
 	 	{% for provincia in provincias %}
 		<h2>{{ provincia }}</h2>
 		<ul>
-			<li> Temperatura minima prevista: {{ temp_min[cont] }} C </li>
-			<li> Temperatura maxima prevista: {{ temp_max[cont] }} C </li>
-			<li> Viento: {{ viento[cont] }} Km/h Direccion {{ direccion[cont] }}</li>
+			<li> Temperatura minima prevista: {{ temp_min[count] }} C </li>
+			<li> Temperatura maxima prevista: {{ temp_max[count] }} C </li>
+			<li> Viento: {{ viento[count] }} Km/h Direccion {{ direccion[count] }}</li>
 		</ul>
-		{% set cont = cont + 1 %}
+		{% set count = count + 1 %}
 		{% endfor %}
 	</body>		
 </html>
